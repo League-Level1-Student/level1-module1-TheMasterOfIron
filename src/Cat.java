@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2017
  *    Level 1
@@ -16,26 +18,34 @@
 
 
 public class Cat {
-
-	private String name;
-	private int lives = 9;
+public static void main(String[] args) {
+	String name = JOptionPane.showInputDialog("What is the cats name?");
+	for (int i = 0; i < 9; i++) {
+		meow();
+	printName();
+	kill();
+	}
+	
+}
+	private static String name;
+	private static int lives = 9;
 
 	Cat(String name) {
 		this.name = name;
 	}
 
-	void meow() {
-		System.out.println("meeeeeooooooooooowwwwwwwww!!");
+	static void meow() {
+		System.out.println("Meeeeeooooooooooowwwwwwwww!!");
 	}
 
-	public void printName() {
+	public static void printName() {
 		if (name == null)
-			System.out.println("i don't know my own name!");
+			System.out.println("I don't know my own name!");
 		else
-			System.out.println("my name is " + name);
+			System.out.println("My name is " + name);
 	}
 
-	void kill() {
+	static void kill() {
 		lives--;
 		if (lives > 0)
 			System.out.println("nice try, but I still have " + lives + " lives left");
